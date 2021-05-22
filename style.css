@@ -1,0 +1,196 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap");
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+}
+
+#wrapper {
+  background: #efefef;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 0.4fr; /* adjusted */
+  grid-template-columns: 1fr 0.4fr;
+  width: 100%;
+  height: 92vh;
+  margin: 0;
+  grid-template-areas:
+    "a a b"
+    "c c c";
+}
+
+#container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
+  -ms-grid-rows: repeat(3, 110px);
+  grid-template-rows: repeat(3, 110px);
+  grid-area: a;
+}
+
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font: 4rem "Josefin Sans", bold;
+}
+
+.a,
+.h {
+  background: #6f98a9;
+}
+.b,
+.d {
+  background: #2a8ead;
+}
+.c,
+.e,
+.i {
+  background: #2f454e;
+}
+.f,
+.g {
+  background: #bfbfbf;
+}
+
+.btn-wrapper {
+  grid-area: b;
+  padding: 0.5rem 2rem 0 2rem;
+}
+
+button {
+  display: block;
+  outline: 0;
+  width: 10rem;
+  font: 0.8rem "Josefin Sans";
+  font-weight: 500;
+  background: #72c3dc;
+  border: none;
+  padding: 15px 32px;
+  border-radius: 6px;
+  margin: 15px 2px;
+  transition: all 0.3s ease-out;
+  box-shadow: inset 0 -4px 0 0 rgba(0, 0, 0, 0.2);
+  color: #fff;
+}
+button:hover {
+  color: #f1f1f1;
+}
+button:active {
+  box-shadow: inset 0 -2px 0 0 rgba(0, 0, 0, 0.2);
+}
+
+span {
+  display: block;
+  text-align: center;
+  font: 1rem "Josefin Sans";
+  margin: 0.4rem 0;
+}
+
+p {
+  margin: 0;
+  text-align: center;
+  grid-area: c;
+  font: italic 0.8rem "Josefin Sans";
+}
+
+@media (max-width: 375px) {
+  .btn-wrapper {
+    margin: 0.2rem 0;
+    display: flex;
+    width: 100vw;
+    padding: 0;
+    justify-content: center;
+  }
+
+  button {
+    display: block;
+    outline: 0;
+    width: 5rem;
+    font: 0.7rem "Josefin Sans";
+    padding: 14px 10px;
+    border-radius: 6px;
+    margin: 4px 2px;
+  }
+
+  #wrapper {
+    background: #fff;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+    -ms-grid-rows: 0.1fr auto 0.1fr;
+    grid-template-rows: 0.1fr auto 0.1fr;
+    width: 100%;
+    height: 92vh;
+    margin: 0;
+    grid-template-areas:
+      "b b b"
+      "a a a"
+      "c c c";
+  }
+
+  #container {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 4px;
+    margin: 0.5rem 1rem;
+    height: auto;
+  }
+
+  .card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    padding: 0.4rem 0;
+    font: 1.2rem "Josefin Sans", bold;
+    background: #efefef;
+    color: #333;
+    height: 56px;
+  }
+
+  .a,
+  .b,
+  .c,
+  .d,
+  .e,
+  .f,
+  .g,
+  .h,
+  .i {
+    border-left: 5px solid;
+  }
+  .a,
+  .h {
+    border-color: #6f98a9;
+  }
+  .b,
+  .d {
+    border-color: #2a8ead;
+  }
+  .c,
+  .e,
+  .i {
+    border-color: #2f454e;
+  }
+  .f,
+  .g {
+    border-color: #bfbfbf;
+  }
+
+  span {
+    background: #333;
+    margin: 0;
+    padding: 1rem 0;
+    color: #f1f1f1;
+  }
+}
